@@ -1,19 +1,18 @@
-#include <iostream>
-using namespace std;
-int main() {
-    int a;
-    cout<< "Enter binary number:\n";
-    cin >> a;
-    int b, c, m;
-    b = 0;
-    c = 0;
-    m = 1;
-    while(a>0){
-        b = a % 10;
-        c = c + b * m;
-        m = m * 2;
-        a = a / 10;
+#include <cmath>
+int task3(){
+    cout<<"input binary number\n";
+    int bin, n, i,decnum;
+    cin>>bin;
+    while(bin!=0){
+        n=bin % 10;
+        if(n!=1 and n!=0){
+            cout<<"it's not a binary number";
+            return -1;
+        }
+        decnum += n * pow(2, i);
+        i++;
+        bin = bin / 10;
     }
-   cout << c << endl;
+    cout<< decnum;
     return 0;
 }
